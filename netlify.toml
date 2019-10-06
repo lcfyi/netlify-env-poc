@@ -1,0 +1,10 @@
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+  publish = "dist/"
+  command = "npm run build"
+
+# Deploy Preview context: all deploys generated from a pull/merge request will
+# inherit these settings. We can't set these values in the UI.
+[context.deploy-preview]
+  environment = { SECRET = "not secret value for previews" }
